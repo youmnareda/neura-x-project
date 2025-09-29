@@ -1,0 +1,152 @@
+/* Main analysis container */
+.single-record-wrapper {
+    max-width: 600px;
+    width: 90%;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section with back arrow and title */
+.single-record-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.single-record-back-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #5D66EA;
+    margin-right: 15px;
+}
+
+.single-record-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+/* Image preview placeholder */
+.single-record-image-preview {
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    background-color: #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+}
+
+.single-record-image-preview::before {
+    content: "\f03e";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 2rem;
+    color: #aaa;
+}
+
+/* Date styling */
+.single-record-date {
+    color: #5D5D5E;
+    text-align: left;
+    margin-bottom: 1.85rem;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+/* Results section title */
+.single-record-results-title {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+/* Result boxes */
+.single-record-result-box {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.single-record-result-box:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.single-record-result-box span:first-child {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Tags for results */
+.single-record-tag {
+    background-color: #5D66EA;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Save button container */
+.single-record-save-button-container {
+    text-align: center;
+}
+
+/* Save button */
+.single-record-save-btn {
+    background-color: #5D66EA;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-weight: 500;
+}
+
+.single-record-save-btn:hover {
+    background-color: #4a53c6;
+}
+
+.single-record-save-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .single-record-wrapper {
+        padding: 1rem;
+    }
+
+    .single-record-container {
+        margin: 20px auto;
+        padding: 30px 20px;
+        /* max-width: 95%;
+        width: 350px; */
+    }
+
+    .single-record-image-preview {
+        height: 150px;
+    }
+
+    .single-record-save-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}

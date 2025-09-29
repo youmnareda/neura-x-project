@@ -1,0 +1,122 @@
+/* src/styles/footer.css */
+
+footer {
+  background-color: #e6e6ff;
+  padding: 2rem 0;
+}
+
+.footer-brand {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-size: 16px;
+  color: #5d5d5e;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links,
+.police-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a {
+  color: #212529;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover {
+  color: #5d66ea;
+  text-decoration: underline;
+}
+
+.police-links a {
+  color: #5d66ea;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+  color: #5d66ea;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+}
+
+.social-icon.animate-on-scroll {
+  animation: socialIconAppear 0.6s ease-out forwards;
+}
+
+@keyframes socialIconAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-5px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 430px) {
+  .footer-brand {
+    font-size: 1.8rem;
+  }
+
+  .footer-tagline {
+    font-size: 15px;
+    margin-bottom: 1rem;
+  }
+  .contact-heading {
+    font-size: 1.2rem;
+
+    margin-bottom: 0.5rem;
+  }
+  .social-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  .footer-links a {
+    color: #212529;
+    text-decoration: none;
+    margin-bottom: 0.2rem;
+    font-size: 15px;
+  }
+  .police-links a {
+    text-decoration: none;
+    margin-bottom: 0.2rem;
+    font-size: 15px;
+  }
+}

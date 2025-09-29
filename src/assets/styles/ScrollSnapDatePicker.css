@@ -1,0 +1,239 @@
+.brith {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .date-picker-container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background: #ffffff;
+  
+    box-shadow: 0 0px 19px 4px rgba(0.1, 0.1, 0.1, 0.1);
+    /* min-height: 100vh; */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    height: 625px !important;
+    border-radius: 20px;
+  }
+  
+  .date-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .back-button:hover {
+    background-color: #e9ecef;
+  }
+  
+  .step-indicator {
+    color: #6c757d;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .date-picker-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #212529;
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 1.2;
+  }
+  
+  .date-picker-wrapper {
+    position: relative;
+    margin-bottom: 60px;
+  }
+  
+  .date-picker-scrollers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 200px;
+    position: relative;
+  }
+  
+  .date-picker-column {
+    flex: 1;
+    height: 100%;
+    position: relative;
+  }
+  
+  .date-picker-scroller {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .date-picker-scroller::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .date-picker-item {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #adb5bd;
+    scroll-snap-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .date-picker-item.selected {
+    color: #ffffff;
+    background: #5a6cf0;
+    border-radius: 12px;
+    font-weight: 600;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(90, 108, 240, 0.3);
+  }
+  
+  .spacer {
+    height: 70px;
+    flex-shrink: 0;
+  }
+  
+  .selection-indicator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 60px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .selection-indicator::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #dee2e6, transparent);
+  }
+  
+  .selection-indicator::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #dee2e6, transparent);
+  }
+  .save-button {
+    width: 200px;
+    padding: 16px;
+    background: #5a6cf0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  
+    /* مركز الزر */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .save-button:hover {
+    background-color: #5d66eac7;
+    transform: scale(1.05);
+  }
+  
+  .save-button:active {
+    background: #3f4dd4;
+    transform: scale(0.98);
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 480px) {
+    .date-picker-container {
+      padding: 20px;
+      width: 300px;
+      max-height: 500px;
+    }
+  
+    .date-picker-title {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+  
+    .date-picker-scrollers {
+      gap: 10px;
+    }
+  
+    .date-picker-item.selected {
+      height: 45px;
+    }
+  
+    .date-picker-item {
+      font-size: 16px;
+    }
+    .save-button {
+      width: 110px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      margin-top: -30px;
+    }
+  }
+  
+  /* Smooth scrolling animations */
+  @media (prefers-reduced-motion: no-preference) {
+    .date-picker-item {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  
+    .date-picker-item.selected {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  
+  /* Focus styles for accessibility */
+  .date-picker-scroller:focus {
+    outline: 2px solid #5a6cf0;
+    outline-offset: 2px;
+  }
+  
+  .back-button:focus {
+    outline: 2px solid #5a6cf0;
+    outline-offset: 2px;
+  }
+  
+  .save-button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }

@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.record-container {
+  width: 970px;
+  height: 582px;
+  margin: 20px auto;
+  margin-top: 60px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.record-header h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.header-buttons {
+  display: flex;
+  /* gap: 12px; */
+}
+
+.select-btn,
+.delete-btn {
+  width: 135px;
+  height: 50px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #5D66EA;
+  border: 1px solid #5D66EA;
+}
+
+.select-btn:hover {
+  background: #5D66EA;
+  color: #FFFFFF;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.record-table {
+  width: 100%;
+  margin: 0 auto;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.table-header {
+  width: 925px;
+  height: 60px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 40px 1fr 120px 2fr 40px;
+  background: #6366f1;
+  color: #FFFFFF;
+  font-size: 19px;
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-cell {
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.table-body {
+  background: white;
+  max-height: 540px;
+  overflow-y: auto;
+  border-radius: 0 0 8px 8px;
+  padding-bottom: 20px;
+}
+
+/* Custom scrollbar styling */
+.table-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+  background: #DCDCFE;
+  border-radius: 3px;
+}
+
+.table-body::-webkit-scrollbar-thumb:hover {
+  background: #c8c8f0;
+}
+
+/* Firefox scrollbar styling */
+.table-body {
+  scrollbar-width: thin;
+  scrollbar-color: #DCDCFE #f1f1f1;
+}
+
+.table-row {
+  width: 925px;
+  height: 90px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 40px 1fr 120px 2fr 40px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.checkbox-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 10px;
+}
+
+.checkbox-header {
+  width: 40px;
+  padding: 16px 10px;
+}
+
+.record-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #5D66EA;
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: #5D66EA;
+}
+
+.select-btn.active {
+  background: #5D66EA;
+  color: #FFFFFF;
+}
+
+.delete-btn.delete-selected {
+  background: transparent;
+  color: #5D66EA;
+  border: 1px solid #5D66EA;
+}
+
+.table-row:hover {
+  background: #f9fafb;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+}
+
+.record-name-cell {
+  font-weight: 450;
+  color: #000000;
+  /* font-size: 18px; */
+}
+
+.date-cell {
+  color: #333333;
+}
+
+.description-cell {
+  line-height: 1.5;
+  color: #333333;
+}
+
+.menu-cell {
+  justify-content: center;
+  padding: 16px 10px;
+  position: relative;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 120px;
+  overflow: hidden;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Add a divider between edit and delete */
+.menu-dropdown .dropdown-divider {
+  height: 1px;
+  background: #f3f4f6;
+  margin: 0 0 0 0;
+  border: none;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #374151;
+}
+
+.dropdown-item:hover {
+  background: #f9fafb;
+}
+
+.edit-item {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.delete-item {
+  color: #dc2626;
+}
+
+.delete-item:hover {
+  background: #fef2f2;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: white;
+  border-radius: 8px;
+  margin: 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 340px;
+  height: 270px;
+  margin-bottom: 20px;
+  opacity: 0.7;
+  filter: drop-shadow(0 4px 16px rgba(93,102,234,0.10));
+}
+
+.empty-text {
+  font-size: 30px;
+  color: #000000;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.empty-subtext {
+  font-size: 20px;
+  color: #5D5D5E;
+  margin: 12px 0 0 0;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.select-btn:disabled,
+.delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========== TABLET STYLES (768px - 1024px) ========== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .record-container {
+    width: 95%;
+    max-width: 900px;
+    margin: 15px auto;
+  }
+
+  .record-header {
+    padding: 18px 20px;
+  }
+
+  .record-header h2 {
+    font-size: 26px;
+  }
+
+  .select-btn,
+  .delete-btn {
+    width: 120px;
+    height: 45px;
+    font-size: 13px;
+  }
+
+  .table-header,
+  .table-row {
+    width: 95%;
+    grid-template-columns: 35px 1fr 110px 2fr 35px;
+  }
+
+  .table-header {
+    font-size: 17px;
+    height: 55px;
+  }
+
+  .table-row {
+    height: 80px;
+  }
+
+  .header-cell,
+  .table-cell {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
+  .record-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .empty-icon {
+    width: 220px;
+    height: 180px;
+  }
+
+  .empty-text {
+    font-size: 22px;
+  }
+
+  .empty-subtext {
+    font-size: 16px;
+  }
+}
+
+/* ========== MOBILE STYLES (up to 768px) ========== */
+@media (max-width: 768px) {
+  .record-container {
+    width: 95%;
+    margin: 10px auto;
+    border-radius: 8px;
+    height: auto;
+    min-height: 400px;
+    box-shadow: none;
+  }
+
+  .record-header {
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .record-header h2 {
+    font-size: 24px;
+  }
+
+  .header-buttons {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .select-btn,
+  .delete-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  /* Mobile table - Card layout */
+  .record-table {
+    max-height: none;
+  }
+
+  .table-header {
+    display: none;
+    /* Hide table header on mobile */
+  }
+
+  .table-body {
+    max-height: none;
+    padding-bottom: 10px;
+  }
+
+  .table-row {
+    width: 95%;
+    height: auto;
+    min-height: 120px;
+    display: block;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 16px;
+    position: relative;
+  }
+
+  .table-row:hover {
+    background: #f3f4f6;
+  }
+
+  .table-cell {
+    display: block;
+    padding: 4px 0;
+    border-bottom: none;
+  }
+
+  .checkbox-cell {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .record-name-cell {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    padding-top: 8px;
+    margin-left: 40px;
+    /* Space for checkbox */
+  }
+
+  .record-name-cell::before {
+    content: "Name: ";
+    font-weight: 400;
+    color: #6b7280;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .date-cell {
+    font-size: 14px;
+    color: #333333;
+    margin-left: 40px;
+    /* Space for checkbox */
+  }
+
+  .date-cell::before {
+    content: "Date: ";
+    font-weight: 500;
+    color: #6b7280;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .description-cell {
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.4;
+    margin-left: 40px;
+    /* Space for checkbox */
+    margin-top: 8px;
+  }
+
+  .description-cell::before {
+    content: "Description: ";
+    font-weight: 500;
+    color: #6b7280;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .menu-cell {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu-btn {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  .menu-dropdown {
+    right: 0;
+    top: 100%;
+  }
+
+  /* Empty state adjustments for mobile */
+  .empty-state {
+    height: 300px;
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .empty-icon {
+    width: 150px;
+    height: 120px;
+  }
+
+  .empty-text {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .empty-subtext {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+/* ========== SMALL MOBILE STYLES (up to 480px) ========== */
+@media (max-width: 480px) {
+  .record-container {
+    width: 98%;
+    margin: 5px auto;
+  }
+
+  .record-header {
+    padding: 12px 16px;
+  }
+
+  .record-header h2 {
+    font-size: 20px;
+  }
+
+  .select-btn,
+  .delete-btn {
+    width: 80px;
+    height: 36px;
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .table-row {
+    width: 98%;
+    padding: 12px;
+    min-height: 100px;
+  }
+
+  .checkbox-cell {
+    top: 12px;
+    left: 12px;
+  }
+
+  .record-name-cell,
+  .date-cell,
+  .description-cell {
+    margin-left: 35px;
+  }
+
+  .record-name-cell {
+    font-size: 14px;
+  }
+
+  .date-cell {
+    font-size: 12px;
+  }
+
+  .description-cell {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .menu-cell {
+    top: 12px;
+    right: 12px;
+  }
+
+  .menu-btn {
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  .empty-icon {
+    width: 120px;
+    height: 95px;
+  }
+
+  .empty-text {
+    font-size: 16px;
+  }
+
+  .empty-subtext {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,358 @@
+/* Base styles remain the same for desktop */
+h1.timeline-heading {
+  text-align: center;
+  color: #5D66EA !important;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 33px;
+  font-weight: bold;
+}
+
+.timeline-box-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 12px;
+}
+
+.timeline-description {
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h2.timeline-title {
+  color: #5D66EA !important;
+  font-size: 25px !important;
+  font-weight: bold !important;
+  margin: 0;
+  flex: 1;
+}
+
+/* Override vertical timeline component styles */
+.vertical-timeline::before {
+  width: 6px !important;
+  animation: growLine 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Icon styles */
+.timeline-icon {
+  width: 40px !important;
+  height: 40px !important;
+  margin-right: 10px;
+  display: block;
+  /* color: white; */
+}
+
+/* Timeline line animation */
+@keyframes growLine {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+/* ======================
+     TABLET RESPONSIVE STYLES
+     ====================== */
+
+/* Tablet - Large (768px to 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .timeline-main {
+    padding: 40px 20px;
+  }
+
+  h1.timeline-heading {
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  h2.timeline-title {
+    font-size: 22px !important;
+  }
+
+  .timeline-description {
+    font-size: 15px;
+  }
+
+  .timeline-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  /* Adjust timeline element content padding */
+  .vertical-timeline-element-content {
+    padding: 18px !important;
+  }
+}
+
+/* Tablet - Small (481px to 768px) */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .timeline-main {
+    padding: 30px 15px;
+  }
+
+  h1.timeline-heading {
+    font-size: 28px !important;
+    margin-top: 35px !important;
+    margin-bottom: 35px !important;
+  }
+
+  h2.timeline-title {
+    font-size: 20px !important;
+  }
+
+  .timeline-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .timeline-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .timeline-box-header {
+    gap: 10px;
+  }
+
+  /* Adjust timeline element content */
+  .vertical-timeline-element-content {
+    padding: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Ensure proper spacing on timeline elements */
+  .vertical-timeline-element {
+    margin: 1em 0 !important;
+  }
+}
+
+/* ======================
+     MOBILE RESPONSIVE STYLES
+     ====================== */
+
+/* Mobile - Large (361px to 480px) */
+@media screen and (max-width: 480px) and (min-width: 361px) {
+  .timeline-main {
+    padding: 25px 10px !important;
+  }
+
+  h1.timeline-heading {
+    font-size: 24px !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+
+  h2.timeline-title {
+    font-size: 18px !important;
+    line-height: 1.3;
+  }
+
+  .timeline-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .timeline-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .timeline-box-header {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  /* Timeline content adjustments */
+  .vertical-timeline-element-content {
+    padding: 14px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 8px !important;
+  }
+
+  /* Timeline line positioning for mobile */
+  .vertical-timeline::before {
+    left: 18px !important;
+    margin-left: 0 !important;
+  }
+
+  /* Timeline icons positioning */
+  .vertical-timeline-element-icon {
+    left: 6px !important;
+    margin-left: 0 !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Remove arrows on mobile for cleaner look */
+  .vertical-timeline-element-content-arrow {
+    display: none !important;
+  }
+
+  /* Adjust content positioning */
+  .vertical-timeline-element-content {
+    margin-left: 50px !important;
+  }
+}
+
+/* Mobile - Small (up to 360px) */
+@media screen and (max-width: 360px) {
+  .timeline-main {
+    padding: 20px 8px !important;
+  }
+
+  h1.timeline-heading {
+    font-size: 22px !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+  }
+
+  h2.timeline-title {
+    font-size: 16px !important;
+    line-height: 1.2;
+  }
+
+  .timeline-description {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .timeline-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .timeline-box-header {
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* Timeline content adjustments for very small screens */
+  .vertical-timeline-element-content {
+    padding: 12px !important;
+    margin-left: 45px !important;
+    margin-right: 0 !important;
+    border-radius: 6px !important;
+  }
+
+  /* Timeline line positioning */
+  .vertical-timeline::before {
+    left: 16px !important;
+    width: 4px !important;
+  }
+
+  /* Timeline icons positioning */
+  .vertical-timeline-element-icon {
+    left: 4px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Ensure text doesn't overflow */
+  .timeline-box-header {
+    align-items: flex-start;
+  }
+
+  h2.timeline-title {
+    word-break: break-word;
+  }
+}
+
+/* ======================
+     LANDSCAPE ORIENTATION
+     ====================== */
+
+/* Mobile landscape adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .timeline-main {
+    padding: 15px 10px !important;
+  }
+
+  h1.timeline-heading {
+    font-size: 20px !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .vertical-timeline-element {
+    margin: 0.5em 0 !important;
+  }
+
+  .vertical-timeline-element-content {
+    padding: 10px !important;
+  }
+
+  h2.timeline-title {
+    font-size: 16px !important;
+  }
+
+  .timeline-description {
+    font-size: 12px;
+  }
+}
+
+/* ======================
+     ACCESSIBILITY & PERFORMANCE
+     ====================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .vertical-timeline::before {
+    animation: none !important;
+  }
+
+  @keyframes growLine {
+
+    0%,
+    100% {
+      height: 100%;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  h1.timeline-heading {
+    color: #000 !important;
+  }
+
+  h2.timeline-title {
+    color: #000 !important;
+  }
+
+  .timeline-description {
+    color: #000;
+  }
+
+  .vertical-timeline::before {
+    background: #000 !important;
+  }
+}
+
+/* Focus states for better accessibility */
+.timeline-icon:focus,
+.vertical-timeline-element-content:focus {
+  outline: 2px solid #5D66EA;
+  outline-offset: 2px;
+}
+
+/* Ensure proper touch targets on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .vertical-timeline-element-content {
+    min-height: 44px;
+  }
+}
+
+.timeline-main {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}

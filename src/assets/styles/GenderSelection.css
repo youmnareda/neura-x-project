@@ -1,0 +1,179 @@
+.gender {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-custom {
+  width: 500px;
+  height: 625px;
+  padding: 20px 40px;
+  background-color: white;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 0px 19px 4px rgba(0.1, 0.1, 0.1, 0.1);
+}
+
+.next-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #5d66ea;
+  border: none;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 12px rgba(111, 66, 193, 0.4);
+  margin-left: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #5d66ea;
+  cursor: pointer;
+}
+
+.step-indicator {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 40px;
+}
+
+.gender-option {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.gender-option:hover {
+  border-color: #5d66ea;
+}
+
+.gender-option.selected {
+  border-color: #5d66ea;
+  background-color: #f8f6ff;
+}
+
+.gender-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #6c757d;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.gender-option.selected .gender-icon {
+  background-color: #5d66ea;
+  color: white;
+  border-color: #5d66ea;
+}
+
+.gender-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #212529;
+  margin: 0;
+}
+
+.gender-options {
+  margin-bottom: 70px;
+}
+
+.next-btn:hover {
+  background-color: #5d66eac7;
+  transform: scale(1.05);
+}
+
+.next-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 480px) {
+  .gender {
+    align-items: center;
+  }
+
+  .container-custom {
+    padding: 20px;
+    width: 300px;
+    max-height: 500px;
+  }
+
+  .title {
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .gender-option {
+    padding: 20px 20px;
+  }
+
+  .gender-options {
+    margin-bottom: 50px;
+  }
+
+  .gender-icon {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 12px;
+  }
+
+  .gender-label {
+    font-size: 15px;
+  }
+
+  .next-btn {
+    bottom: 20px;
+    margin-right: 0px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .next-btn {
+    bottom: 20px;
+    right: 20px;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,33 @@
+.sparkles-container {
+  position: relative;
+  display: inline-block;
+}
+
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 12px;
+  color: #ffd700;
+  animation: sparkle-animation 1.5s ease-in-out forwards;
+  z-index: 10;
+}
+
+@keyframes sparkle-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+/* Optional: Add a subtle glow effect to the text */
+.sparkles-container:hover {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+} 

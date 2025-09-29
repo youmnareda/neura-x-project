@@ -1,0 +1,237 @@
+.icon-logo {
+  width: 50px;
+  color: #5d66ea;
+}
+
+.navbar-brand {
+  font-size: 28px !important;
+  font-weight: bold !important;
+  margin-left: 15px;
+  font-family: "Arial", sans-serif;
+}
+
+.navbar {
+  background-color: #dcdcfe;
+  padding: 10px 70px !important;
+}
+
+.navbar-nav li {
+  padding: 0 15px;
+}
+
+.nav-item a {
+  font-size: 19px;
+}
+
+.notification-box {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 350px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+}
+
+.notification-box .header {
+  background-color: #5d66ea;
+  color: white;
+  padding: 10px 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+}
+
+.notification-item {
+  background-color: #f5f5ff;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.notification-item .date {
+  font-size: 0.8rem;
+  color: #333;
+  margin-left: 88px;
+}
+
+.notification-item .dot {
+  height: 10px;
+  width: 10px;
+  background-color: #1dcf78;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.not {
+  color: #5d66ea;
+  margin-right: 20px;
+  width: 40px;
+}
+
+.profile-group {
+  display: flex;
+  align-items: center;
+}
+
+/* Fixed navbar link styles with proper specificity */
+.navbar .navbar-nav .nav-link {
+  color: #333 !important; /* Default color */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 3px solid transparent;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.navbar .navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #5D66EA;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #5D66EA !important; /* Hover color */
+}
+
+.navbar .navbar-nav .nav-link.active::after,
+.navbar .navbar-nav .nav-link:focus::after {
+  width: 100%;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus {
+  color: #5D66EA !important; /* Active/selected color */
+}
+
+/* Alternative approach with even higher specificity if needed */
+.navbar-light .navbar-nav .nav-link {
+  color: #333 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 3px solid transparent;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.navbar-light .navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #5D66EA;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #5D66EA !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active::after,
+.navbar-light .navbar-nav .nav-link:focus::after {
+  width: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #5D66EA !important;
+}
+
+@keyframes bell-ring {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(-15deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(6deg); }
+  50% { transform: rotate(-4deg); }
+  60% { transform: rotate(2deg); }
+  70% { transform: rotate(-1deg); }
+  80%, 100% { transform: rotate(0); }
+}
+
+.bell-animate {
+  animation: bell-ring 0.7s;
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    padding: 7px 8px !important;
+  }
+  
+  .navbar-brand {
+    font-size: 20px !important;
+    margin-left: 5px;
+  }
+  
+  .navbar-toggler {
+    margin-left: 8px;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+  }
+  
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .profile-group img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  .not {
+    font-size: 1.6rem !important;
+    margin-right: 5px !important;
+  }
+  
+  .icon-logo {
+    width: 30px;
+  }
+  
+  .navbar-brand {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .navbar-toggler-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .profile-group img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .not {
+    font-size: 1.7rem !important;
+    margin-right: 15px;
+  }
+  
+  .icon-logo {
+    width: 35px;
+  }
+  
+  .navbar-brand {
+    font-size: 20px;
+  }
+  
+  .navbar {
+    padding: 10px 15px !important;
+  }
+}

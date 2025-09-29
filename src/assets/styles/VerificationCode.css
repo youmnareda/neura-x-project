@@ -1,0 +1,207 @@
+/* try2.css - Complete stylesheet for Email and Verification components */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+/* Base container styling */
+.email-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Background can be uncommented and updated with your image path */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/robot-background.jpg'); */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Card styling shared between email and verification screens */
+.email-form-card {
+  /* Adjust background opacity as needed */
+  /* background: rgba(161, 179, 204, 0.85); */
+  backdrop-filter: blur(5px);
+  border-radius: 43px;
+  padding: 80px;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography for card headings */
+.email-form-card h1 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Typography for card paragraphs */
+.email-form-card p {
+  color: rgba(255, 255, 255, 0.877);
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Form layouts */
+.email-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Email input field styling */
+.email-form-card input {
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  height: 50px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Button styling */
+.email-form-card button {
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4c6ef5;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  font-family: 'Inter', sans-serif;
+  height: 50px;
+}
+
+.email-form-card button:hover {
+  background-color: #3b5ce5;
+}
+
+/* Verification specific styles */
+/* Container for verification code inputs */
+.verification-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Individual verification code input boxes */
+.verification-inputs input {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f5f5f5;
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: #888;
+}
+
+/* Focus state for verification inputs */
+.verification-inputs input:focus {
+  outline: 2px solid #4c6ef5;
+}
+
+/* Custom width for verification button */
+.verification-button {
+  width: 280px !important;
+  margin: 0 auto;
+
+  height: 50px !important;
+  background: linear-gradient(45deg, #a0a2cb 0%, #5d66ea 100%);
+  border: none;
+  border-radius: 15px;
+  padding: 12px 15px;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.verification-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.resend-link {
+  margin-top: 20px;
+}
+
+/* Style for resend link text */
+.resend-link-text {
+  color: #767676;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+.resend-link-text:hover {
+  color: #3b5ce5;
+}
+
+/* Make sure the form maintains enough width for the button */
+.verification-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Responsive adjustment for the verification button */
+@media (max-width: 600px) {
+  .verification-button {
+    width: 100% !important;
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .email-form-card {
+    padding: 50px 50px;
+  }
+
+  .email-form-card h1 {
+    font-size: 24px;
+  }
+
+  .email-form-card p {
+    font-size: 14px;
+  }
+
+  /* Verification specific responsive adjustments */
+  .verification-inputs {
+    gap: 6px;
+  }
+
+  .verification-inputs input {
+    width: 40px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .email-form-card h1 {
+    font-size: 20px;
+  }
+
+  /* Verification specific responsive adjustments */
+  .verification-inputs input {
+    width: 35px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
